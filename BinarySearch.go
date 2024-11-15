@@ -31,8 +31,8 @@ func main() {
 
 func binarySearch(a []int, first int, last int, key int) int {
 
-	mid := int(first + (last-first)/2)
 	if last >= first {
+		mid := int(first + (last-first)/2)
 		if a[mid] == key {
 			return mid
 		}
