@@ -32,13 +32,13 @@ func main() {
 func binarySearch(a []int, first int, last int, key int) int {
 
 	if last >= first {
-		mid := int(first + (last-first)/2)
+		mid := int(first + (last-first)/2) // this equation is used to prevent overflow  when using for large arrays
 		if a[mid] == key {
 			return mid
 		}
 
 		if key > a[mid] {
-			return binarySearch(a, mid+1, last, key)
+			return binarySearch(a, mid+1, last, key) //stacked since otherwise it returns -1 after continously executing
 		} else {
 			return binarySearch(a, first, mid-1, key)
 		}
